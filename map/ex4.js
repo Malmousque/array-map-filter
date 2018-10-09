@@ -39,21 +39,27 @@ Tableau de sortie correspondant (toFixed transforme les nombres en chaînes)
     surface: "12.566"
   },
   {
-    radius: 7,
-    circumference: "43.982",
-    surface: "153.938"
-  },
-  {
-    radius: 11,
-    circumference: "69.115",
     surface: "380.133"
   }
 ]
 */
 
-function getCirclesProperties(radiuses) {
-}
 
+
+function getCirclesProperties(radiuses) {
+   return radiuses.map(function(rad){
+    let R = rad;
+    let C = (2 * Math.PI * R);
+    let S = (Math.PI * (R * R));
+    return {radius : R, circumference : (C.toFixed(3)), surface : (S.toFixed(3))};
+   })
+
+  }
+
+  
+
+
+  
 
 
 // Ne pas modifier l'export
